@@ -1,0 +1,123 @@
+1) Создать базу данных - + create a new schema
+   name только прописными буквами "testcase"
+   кодировка "utf8" и "utf8_bin"
+   applay
+   finish
+ 
+2) Создать таблицу - table + create table
+   CREATE TABLE `testcase`.`priority` (
+   `id` INT NOT NULL AUTO_INCREMENT,
+   `name` VARCHAR(45) NOT NULL,
+   PRIMARY KEY (`id`))
+   ENGINE = InnoDB;
+
+3) Вывести содержимое таблицы
+   SELECT * FROM testcase.priority;
+
+4) Редактировать таблицу - ПКМ и Alter Table
+   ALTER TABLE `testcase`.`priority` 
+   ADD COLUMN `en_name` VARCHAR(45) NULL AFTER `name`;
+
+5) Вывести содержимое таблицы 
+   SELECT * FROM testcase.priority;
+
+   или
+
+   use testcase;
+   SELECT * FROM priority;
+
+6) Удалить таблицу
+   ПКМ по таблице - Drop Table + Drop Now
+   
+7) Добавить новые строки, можно через графический интерфес или
+   INSERT INTO `testcase`.`priority` (`name`) VALUES ('Низкий');
+   INSERT INTO `testcase`.`priority` (`name`) VALUES ('Средний');
+   INSERT INTO `testcase`.`priority` (`name`) VALUES ('Высокий');   
+   
+8) Добавить одну строку 
+   use testcase;
+   INSERT INTO priority (`name`) VALUES ('Немедленный');
+   
+9) Вывести одну первую строку 
+   use testcase;
+   SELECT * FROM priority WHERE id = 1;
+   
+10) Вывести все строки больше 1
+    use testcase;
+    SELECT * FROM priority WHERE id > 1;   
+	
+11) Вывести все строки где есть английское имя
+    use testcase;
+    SELECT * FROM priority WHERE en_name Is NOT NULL; 
+	
+12) Вывести все строки где английское имя не существует	
+    use testcase;
+    SELECT * FROM priority WHERE en_name Is NULL;
+
+13) Вывести все строки где id < 3 и есть английское имя
+    use testcase;
+    SELECT * FROM priority WHERE (id < 3) AND (en_name is Null);
+
+14) Вывести все строки где id < 3 или есть английское имя
+    use testcase;
+    SELECT * FROM priority WHERE (id < 3) OR (en_name is Null);
+	
+15) Вывести только 1 столбик "name"
+    use testcase;
+    SELECT name FROM priority;
+	
+16) Вывести несколько столбцов "name" и "en_name" (Выводятся в том порядке в котором пишу через запятую)
+	use testcase;
+    SELECT name, en_name FROM priority;
+	
+17) Сортировать вывод по выбранному столбцу "count"
+    use testcase;
+    SELECT * FROM priority ORDER BY count;
+    
+18) Сортировать вывод по выбранному столбцу "count" в обратном порядке 
+    use testcase;
+    SELECT * FROM priority ORDER BY count DESC;
+	
+19) Вывести только первые 2 сроки таблицы
+    use testcase;
+    SELECT * FROM priority LIMIT 2;
+	
+20) Вывести первые 2 сроки где id > 2
+    use testcase;
+    SELECT * FROM priority WHERE id > 2 LIMIT 2;
+	
+21) Изменить имя уже существующей строки где id < 2
+    use testcase;
+    UPDATE priority SET name = 'Очень низкий' WHERE id < 2;
+   
+22) Удалить строки где id > 4  
+    use testcase;
+    DELETE FROM priority WHERE id > 4;
+
+Homework 
+
+SELECT
+DROP
+INSERT
+WHERE
+ORDER BY
+LIMIT
+UPDATE
+DELETE
+CREATE
+
+2 Комбинированные команды
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
